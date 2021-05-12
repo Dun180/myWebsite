@@ -9,8 +9,9 @@ public class User {
     @TableId(type = IdType.AUTO)
     private Long id;
     private String name;
-    private Integer age;
     private String email;
+    private String username;
+    private String password;
 
     //字段添加填充内容
     @TableField(fill = FieldFill.INSERT)
@@ -62,29 +63,11 @@ public class User {
         return name;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", email='" + email + '\'' +
-                ", createTime=" + createTime +
-                ", updateTime=" + updateTime +
-                '}';
-    }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
 
     public String getEmail() {
         return email;
@@ -94,13 +77,55 @@ public class User {
         this.email = email;
     }
 
-    public User(Long id, String name, Integer age, String email, Date createTime, Date updateTime) {
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                ", deleted=" + deleted +
+                ", version=" + version +
+                '}';
+    }
+
+    public User(Long id, String name, String email, String username, String password, Date createTime, Date updateTime, Integer deleted, Integer version) {
         this.id = id;
         this.name = name;
-        this.age = age;
         this.email = email;
+        this.username = username;
+        this.password = password;
         this.createTime = createTime;
         this.updateTime = updateTime;
+        this.deleted = deleted;
+        this.version = version;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Integer getDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(Integer deleted) {
+        this.deleted = deleted;
     }
 
     public User() {

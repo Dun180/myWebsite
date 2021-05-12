@@ -1,5 +1,6 @@
 package com.dun;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.dun.mapper.UserMapper;
 import com.dun.pojo.User;
 import org.junit.jupiter.api.Test;
@@ -20,8 +21,13 @@ class WebsiteApplicationTests {
     void contextLoads() {
         //参数是一个wrapper，条件构造器 这里先不用，传入null
         //查询全部用户
-        List<User> users = userMapper.selectList(null);
-        users.forEach(System.out::println);
+        User user = null;
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+        wrapper
+                .eq("username","111")
+                .eq("password","123456");
+        user = userMapper.selectOne(wrapper);
+        System.out.println(user);
     }
 
 }
