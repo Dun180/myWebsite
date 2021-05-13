@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>主页</title>
+    <link th:href="@{/css/head.css}" rel="stylesheet">
 </head>
+
 <body>
-<h1>主页</h1>
-<a th:href="@{/login.html}">
-    <button>登录</button>
-</a>
-<iframe height="740" src="https://ac.yunyoujun.cn"></iframe>
+
+<header class="nav-header">
+    <div class="head-contain">
+        <nav class="top-nav">
+            <ul>
+                <li><a href="">1111</a></li>
+                <li><a href="">2</a></li>
+                <li><a href="">3</a></li>
+                <li><a href="">4</a></li>
+                <li><a href="">5</a></li>
+                <li><a href="">6</a></li>
+                <li><a href="">7</a></li>
+            </ul>
+        </nav>
+        <div class="top-right">
+            <a th:href="@{/login.html}">登录</a>
+        </div>
+    </div>
+</header>
+
+
+
 </body>
 </html>
+

@@ -11,6 +11,7 @@ import org.thymeleaf.util.StringUtils;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
+import java.util.Date;
 
 @Controller
 public class LoginController {
@@ -47,4 +48,26 @@ public class LoginController {
             return "login";
         }
     }
+
+    //注册请求
+    @RequestMapping("/user/register")
+    public String register(@RequestParam("username") String username,
+                           @RequestParam("password") String password){
+        if(!StringUtils.isEmpty(username)&&!StringUtils.isEmpty(password)){
+            User user = new User();
+            user.setUsername(username);
+            user.setPassword(password);
+            user.setVersion(1);
+            user.setCreateTime(new Date());
+            user.setUpdateTime(new Date());
+            user.setDeleted(0);
+            if(userService.register(user)){
+                return "login";
+            }else {
+                return "register";
+            }
+        }
+        return "register";
+    }
+
 }

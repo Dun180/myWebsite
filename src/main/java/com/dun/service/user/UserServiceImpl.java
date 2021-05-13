@@ -29,8 +29,16 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public void test() {
-        List<User> users = userMapper.selectList(null);
-        users.forEach(System.out::println);
+    public boolean register(User user) {
+        boolean flag = false;
+        int insert = userMapper.insert(user);
+        System.out.println(insert+" "+user);
+        if (insert > 0){
+            flag = true;
+            System.out.println("add success");
+        }else{
+            System.out.println("add failed");
+        }
+        return flag;
     }
 }
