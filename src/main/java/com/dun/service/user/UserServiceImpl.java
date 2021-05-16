@@ -36,8 +36,31 @@ public class UserServiceImpl implements UserService{
         if (insert > 0){
             flag = true;
             System.out.println("add success");
+            user.setName("用户"+user.getId());
+            int update = userMapper.updateById(user);
+            System.out.println("更新状况:"+update);
         }else{
             System.out.println("add failed");
+        }
+        return flag;
+    }
+
+    @Override
+    public List<User> getUserList(String queryUserName) {
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+        List<User> users = userMapper.selectList(wrapper);
+        return users;
+    }
+
+    @Override
+    public boolean deleteUserById(Integer id) {
+        boolean flag = false;
+        int delete = userMapper.deleteById(id);
+        if(delete>0){
+            flag = true;
+            System.out.println("delete success");
+        }else {
+            System.out.println("delete failed");
         }
         return flag;
     }

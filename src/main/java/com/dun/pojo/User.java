@@ -7,7 +7,7 @@ import java.util.Date;
 public class User {
 
     @TableId(type = IdType.AUTO)
-    private Long id;
+    private Integer id;
     private String name;
     private String email;
     private String username;
@@ -51,11 +51,11 @@ public class User {
         this.updateTime = updateTime;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -92,7 +92,7 @@ public class User {
                 '}';
     }
 
-    public User(Long id, String name, String email, String username, String password, Date createTime, Date updateTime, Integer deleted, Integer version) {
+    public User(Integer id, String name, String email, String username, String password, Date createTime, Date updateTime, Integer deleted, Integer version) {
         this.id = id;
         this.name = name;
         this.email = email;

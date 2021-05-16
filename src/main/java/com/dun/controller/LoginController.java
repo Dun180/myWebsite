@@ -6,6 +6,7 @@ import com.dun.service.user.UserServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.thymeleaf.util.StringUtils;
 
@@ -20,6 +21,7 @@ public class LoginController {
     @Resource(name = "userService")
     private UserService userService;
 
+
     //进入登录页面
     @RequestMapping("/user/toLogin")
     public String toLogin(){
@@ -27,7 +29,7 @@ public class LoginController {
     }
 
     //登录请求
-    @RequestMapping("/user/login")
+    @RequestMapping(value = "/user/login",method = RequestMethod.POST)
     public String login(@RequestParam("username") String username,
                         @RequestParam("password") String password,
                         Model model,
@@ -50,7 +52,7 @@ public class LoginController {
     }
 
     //注册请求
-    @RequestMapping("/user/register")
+    @RequestMapping(value = "/user/register",method = RequestMethod.POST)
     public String register(@RequestParam("username") String username,
                            @RequestParam("password") String password){
         if(!StringUtils.isEmpty(username)&&!StringUtils.isEmpty(password)){
