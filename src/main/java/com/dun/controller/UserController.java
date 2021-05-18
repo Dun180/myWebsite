@@ -4,9 +4,7 @@ import com.dun.pojo.User;
 import com.dun.service.user.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -30,5 +28,23 @@ public class UserController {
     public String delUser(@PathVariable("id") Integer id){
         userService.deleteUserById(id);
         return "redirect:/userList";
+    }
+
+    @GetMapping("/userEditPage/{id}")
+    public String userEditPage(@PathVariable("id") Integer id,Model model){
+        model.addAttribute("userId",id);
+        return "user/member-edit";
+    }
+
+    @RequestMapping(value = "/userEdit/{id}",method = RequestMethod.GET)
+    @ResponseBody
+    public void userEdit(@PathVariable("id") Integer id,
+                           @RequestParam("email") String email,
+                           @RequestParam("name") String name,
+                           @RequestParam("password") String password
+                           ){
+        System.out.println(id+email+name+password);
+        System.out.println("进入userEdit请求");
+
     }
 }

@@ -8,9 +8,10 @@
 
 
   <link rel="stylesheet" href="./css/xadmin.css">
+  <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" th:src="@{lib/layui/layui.js}" charset="utf-8"></script>
 
-
-
+  <script type="text/javascript" th:src="@{js/xadmin.js}"></script>
 
 
 </head>
@@ -69,7 +70,8 @@
 
       <td class="td-manage">
 
-        <a title="编辑" onclick="x_admin_show('编辑','member-edit.html',600,400)" href="javascript:;">
+<!--        <a title="编辑" onclick="x_admin_show('编辑','userEditPage',600,400)" href="javascript:;">-->
+        <a title="编辑" th:onclick="x_admin_show('编辑','/userEditPage/[[${user.getId()}]]',600,400);">
           <i class="layui-icon"></i>
         </a>
         <a onclick="x_admin_show('修改密码','member-password.html',600,400)" title="修改密码" href="javascript:;">
@@ -96,7 +98,12 @@
 
 </div>
 
-
+<script>var _hmt = _hmt || []; (function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();</script>
 
 
 </body></html>

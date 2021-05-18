@@ -17,6 +17,8 @@ public class MyMvcConfig implements WebMvcConfigurer {
         registry.addViewController("/register.html").setViewName("register");
         //registry.addViewController("/member-list.html").setViewName("/user/member-list");
         registry.addViewController("/member-del.html").setViewName("/user/member-del");
+        registry.addViewController("/welcome.html").setViewName("/user/welcome");
+//        registry.addViewController("/userEditPage").setViewName("/user/member-edit");
     }
 
     //拦截器配置
