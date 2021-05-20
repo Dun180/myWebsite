@@ -64,4 +64,23 @@ public class UserServiceImpl implements UserService{
         }
         return flag;
     }
+
+    @Override
+    public User getUserById(Integer id) {
+        User user = userMapper.selectById(id);
+        return user;
+    }
+
+    @Override
+    public boolean editUser(User user) {
+        boolean flag = false;
+        int update = userMapper.updateById(user);
+        if(update>0){
+            flag = true;
+            System.out.println("update success");
+        }else {
+            System.out.println("update failed");
+        }
+        return flag;
+    }
 }

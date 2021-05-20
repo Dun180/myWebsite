@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -45,6 +46,11 @@ public class UserController {
                            ){
         System.out.println(id+email+name+password);
         System.out.println("进入userEdit请求");
-
+        User user = userService.getUserById(id);
+        user.setEmail(email);
+        user.setName(name);
+        user.setPassword(password);
+        user.setUpdateTime(new Date());
+        userService.editUser(user);
     }
 }
