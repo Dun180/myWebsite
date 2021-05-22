@@ -5,11 +5,14 @@
     <meta charset="UTF-8">
     <title>首页-Dun的个人博客</title>
     <link rel="stylesheet" th:href="@{/css/head.css}">
+    <link rel="stylesheet" th:href="@{/css/index.css}">
     <link rel="stylesheet" th:href="@{css/reset.css}">
+    <link rel="stylesheet" th:href="@{fonts/iconfont.css}">
+    <script th:src="@{js/index.js}"></script>
 </head>
 
 <body>
-
+<!--头部 S-->
 <header class="nav-header">
     <div class="head-contain">
         <nav class="top-nav">
@@ -29,9 +32,122 @@
         </div>
     </div>
 </header>
-
-
+<!--头部 E-->
+<!--轮播 S-->
+<div class="idx-banner container">
+    <ul class="banner-list" id="imgList">
+        <li><img name="banner-img" th:src="@{img/banner/banner1.png}" alt=""></li>
+        <li><img name="banner-img" th:src="@{img/banner/banner2.png}" alt=""></li>
+        <li><img name="banner-img" th:src="@{img/banner/banner3.png}" alt=""></li>
+        <li><img name="banner-img" th:src="@{img/banner/banner4.png}" alt=""></li>
+        <li><img name="banner-img" th:src="@{img/banner/banner1.png}" alt=""></li>
+    </ul>
+    <a href="javascript:0" class="btn prev"><span class="iconfont icon-xiangzuo"></span></a>
+    <a href="javascript:0" class="btn next"><span class="iconfont icon-xiangyou"></span></a>
+    <div class="page">
+        <a name="page-jump" href="javascript:0">1</a>
+        <a name="page-jump" href="javascript:0">2</a>
+        <a name="page-jump" href="javascript:0">3</a>
+        <a name="page-jump" href="javascript:0">4</a>
+    </div>
+</div>
+<!--轮播 E-->
 
 </body>
 </html>
 
+
+
+
+<!--<script type="text/javascript">-->
+<!--    window.οnlοad=function(){-->
+<!--        //获得ul的元素-->
+<!--        var imgList=document.getElementById("imgList");-->
+<!--        //获得图片的数组-->
+<!--        var imgArr=document.getElementsByTagName("img");-->
+<!--        var navId=document.getElementById("navId");-->
+<!--        var outer=document.getElementById("outer");-->
+<!--        imgList.style.width=520*imgArr.length+"px";-->
+<!--        //设置navId的位置 使其居中-->
+<!--        navId.style.left=(outer.offsetWidth-navId.offsetWidth)/2+"px";-->
+<!--        //得到所有的a 标签 如果有其他的A的话  这里需要注意要使用navId子元素的a -->
+<!--        var allA=document.getElementsByTagName("a");-->
+<!--        var index=0;-->
+<!--        allA[index].style.backgroundColor='black';//设置默认的a为黑色-->
+<!--        for(var i=0;i<allA.length;i++){-->
+<!--            allA[i].num=i;-->
+<!--            //alert(allA[i].num);-->
+<!--            allA[i].οnclick=function(){-->
+<!--                clearInterval(timer);-->
+<!--                index=this.num;-->
+<!--                /* imgList.style.left= -520*index+"px"; */-->
+<!--                setA();-->
+<!--                move(imgList,"left",-520*index,50,function(){-->
+<!--                    autoChange();-->
+<!--                });-->
+<!--            };-->
+<!--        }-->
+
+<!--        function setA(){-->
+<!--            //alert(index);-->
+<!--            //当indcx值比图片的数目多的时候 就归0-->
+<!--            if(index>=imgArr.length-1){-->
+<!--                index=0;-->
+<!--                imgList.style.left=0;-->
+<!--            }-->
+<!--            for(var i=0;i<allA.length;i++){-->
+<!--                //去掉未点击的颜色  仍然保留a : hover有用-->
+<!--                allA[i].style.backgroundColor="";-->
+<!--            }-->
+<!--            allA[index].style.backgroundColor="black";-->
+<!--        }-->
+<!--        var timer;-->
+<!--        function autoChange(){-->
+
+<!--            timer=setInterval(function(){-->
+<!--                index++;-->
+<!--                index%=imgArr.length;-->
+<!--                move(imgList,"left",-520*index,20,function(){-->
+<!--                    setA();-->
+<!--                });-->
+<!--            },2000);-->
+<!--        }-->
+<!--        autoChange();-->
+
+<!--//可以根据 target 参数进行判断 向哪个方向移动-->
+<!--        function move(obj,attr,target,speed,callback){-->
+<!--            var current=parseInt(getStyle(obj,attr));-->
+<!--            //alert(current);-->
+<!--            //根据目标的位置来判定 speed的值是正是负-->
+<!--            if(current>target){-->
+<!--                speed=-speed;-->
+<!--            }-->
+<!--            //自定义对象定时器 防止对象之间的混乱操作 -->
+<!--            clearInterval(obj.timer);-->
+<!--            //alert(oldValue);-->
+<!--            obj.timer=setInterval(function(){-->
+<!--                var oldValue=parseInt(getStyle(obj,attr));-->
+<!--                var newVal=oldValue+speed;-->
+<!--                //如果移动的越界 进行重置-->
+<!--                if((speed<0 && newVal<=target) || (speed>0 && newVal>=target)){-->
+<!--                    newVal=target;-->
+<!--                }-->
+<!--                obj.style[attr]=newVal+"px";-->
+<!--                if(newVal==target){-->
+<!--                    clearInterval(obj.timer);-->
+<!--                    callback && callback();//回掉函数 先判断 有就执行 没有不执行-->
+<!--                }-->
+<!--            },30);-->
+<!--        }-->
+
+<!--        //obj:获取样式元素-->
+<!--        //name:获取样式名-->
+<!--        function getStyle(obj,name){-->
+<!--            if(window.getComputedStyle){-->
+<!--                return getComputedStyle(obj,null)[name];-->
+<!--            }else{-->
+<!--                return obj.currentStyle[name];-->
+<!--            }-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->

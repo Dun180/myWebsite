@@ -1,0 +1,73 @@
+/*公共样式*/
+.container {
+    /*设置容器宽度*/
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*轮播样式*/
+.idx-banner {
+    height: 310px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 20px;
+}
+.idx-banner .banner-list {
+    width: 20000px;
+    height: 310px;
+    position: absolute;
+
+}
+.idx-banner .banner-list li {
+    float: left;
+    height: 310px;
+}
+.idx-banner .banner-list li img {
+    border-radius: 5px;
+}
+.idx-banner .btn.prev {
+    height: 44px;
+    width: 27px;
+    top: 50%;
+    margin-top: -22px;
+    position: absolute;
+}
+.idx-banner .btn.prev span{
+    font-size: 37px;
+}
+.idx-banner .btn.next {
+    height: 44px;
+    width: 27px;
+    top: 50%;
+    right: 10px;
+    margin-top: -22px;
+    position: absolute;
+}
+.idx-banner .btn.next span {
+    font-size: 37px;
+}
+.idx-banner .page {
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    z-index: 100;
+    padding-right: 50px;
+}
+.idx-banner .page a {
+    display: inline-block;
+    margin: 0 5px;
+    width: 6px;
+    height: 6px;
+    border: 2px solid #fff;
+    border-color: rgba(255,255,255,0.3);
+    border-radius: 50%;
+    font-size: 0;
+    background-color: #f5f5f5;
+    background-color: rgba(0,0,0,0.5);
+}
+.idx-banner .page a:hover {
+    background-color: #fff;
+    background-color: rgba(255,255,255,0.4);
+    border-color: #757575;
+    border-color: rgba(0,0,0,0.4);
+}
