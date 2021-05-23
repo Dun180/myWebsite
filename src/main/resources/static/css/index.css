@@ -10,7 +10,7 @@
     height: 310px;
     overflow: hidden;
     position: relative;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 .idx-banner .banner-list {
     width: 20000px;
@@ -70,4 +70,55 @@
     background-color: rgba(255,255,255,0.4);
     border-color: #757575;
     border-color: rgba(0,0,0,0.4);
+}
+/*主体内容*/
+.main-content {
+    margin-top: 30px;
+}
+.main-content .search-box {
+    width: 300px;
+    height: 50px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+    border: 1px solid #e0e0e0;
+    border-radius: 30px;
+    float: right;
+}
+.main-content .daily-sentence {
+    width: 300px;
+    height: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    float: right;
+    margin-top: 30px;
+}
+.main-content .daily-sentence .tit{
+    width: 300px;
+    font-size: 24px;
+    margin: 5px 0;
+    text-align: center;
+}
+.main-content .daily-sentence .content {
+    width: 280px;
+    font-size: 16px;
+    margin: 15px 10px 0 10px;
+    display: block;
+    text-indent: 2em;
+}
+.main-content .personal-profile {
+    width: 300px;
+    height: 300px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    float: right;
+    margin-top: 30px;
+}
+.main-content .technology-sharing {
+    width: 870px;
+    height: 800px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    float: left;
 }

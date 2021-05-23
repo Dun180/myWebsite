@@ -4,13 +4,15 @@
 window.onload=function (){
     //获得ul的元素
     var imgList=document.getElementById("imgList");
-    console.log(imgList);
     //获得图片的数组
     var imgArr=document.getElementsByName("banner-img");
     var pageId=document.getElementsByClassName("page");
     var outer=document.getElementsByClassName("idx-banner");
     var allA=document.getElementsByName("page-jump");
-
+    var btnPrev=document.getElementsByClassName("btn prev");
+    var btnNext=document.getElementsByClassName("btn next")
+    console.log(btnPrev[0]);
+    console.log(btnNext[0]);
     var index=0;
     allA[index].style.backgroundColor="rgba(255,255,255,0.4)";
     for(var i=0;i<allA.length;i++){
@@ -23,6 +25,36 @@ window.onload=function (){
                 autoChange();
             });
         };
+    }
+
+    btnPrev[0].onclick=function(){
+        clearInterval(timer);
+        index--;
+        if (index<0){
+            index=imgArr.length-1;
+            imgList.style.left=-1200*(index)+"px";
+            index--;
+        }
+        console.log(index);
+
+        move(imgList,"left",-1200*(index),150,function (){
+            setA();
+            autoChange();
+        });
+    }
+    alert("18");
+    btnNext[0].onclick=function(){
+        clearInterval(timer);
+        index++;
+        if(index>=imgArr.length){
+            index=0;
+            imgList.style.left=0;
+        }
+
+        move(imgList,"left",-1200*index,150,function (){
+            setA();
+            autoChange();
+        });
     }
 
     function setA(){
