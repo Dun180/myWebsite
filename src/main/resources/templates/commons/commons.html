@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--头部 S-->
+<header class="nav-header" th:fragment="topbar">
+  <div class="head-contain">
+    <nav class="top-nav">
+      <ul>
+        <li class="tit"><h3>Dun的个人博客</h3></li>
+        <li><a href="">首页</a></li>
+        <li><a th:href="@{/cat}">吸猫圣地</a></li>
+      </ul>
+    </nav>
+    <div class="top-right">
+      <a th:href="@{/login.html}">登录</a>
+    </div>
+  </div>
+</header>
+<!--头部 E-->
+</body>
+</html>

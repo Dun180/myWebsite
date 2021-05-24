@@ -13,20 +13,7 @@
 
 <body>
 <!--头部 S-->
-<header class="nav-header">
-    <div class="head-contain">
-        <nav class="top-nav">
-            <ul>
-                <li class="tit"><h3>Dun的个人博客</h3></li>
-                <li><a href="">首页</a></li>
-                <li><a href="">吸猫圣地</a></li>
-            </ul>
-        </nav>
-        <div class="top-right">
-            <a th:href="@{/login.html}">登录</a>
-        </div>
-    </div>
-</header>
+<div th:replace="~{commons/commons::topbar}"></div>
 <!--头部 E-->
 <!--轮播 S-->
 <div class="idx-banner container">
@@ -49,7 +36,50 @@
 <!--轮播 E-->
 <!--主体 S-->
 <div class="main-content container">
-    <div class="technology-sharing"></div>
+    <div class="blogs">
+        <div class="tit">最新分享</div>
+        <span class="separator">1</span>
+        <div class="article">
+            <figure>
+                <a href=""></a>
+                <img th:src="@{img/banner/banner1.png}" alt="">
+            </figure>
+            <ul>
+                <h3><a href="">标题</a></h3>
+                <p>
+                    正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文
+                    <a href="">[详情]</a>
+                </p>
+                <div class="message">
+                    <div class="message-left">
+                        <i class="iconfont icon-biaoqian"></i>
+                        <a href="" class="author">作者</a>
+                        <i class="iconfont icon-shijian"></i>
+                        <span>2020-02-14  21:19:26</span>
+                    </div>
+                    <div class="message-right">
+                        <a href="" class="msg">
+                            <i class="iconfont icon-xiaoxi"></i>
+                            <span>48</span>
+                        </a>
+                        <div class="msg">
+                            <i class="iconfont icon-yanjing_huaban1"></i>
+                            <span>14.3k</span>
+                        </div>
+                        <a href="" class="msg">
+                            <i class="iconfont icon-dianzan"></i>
+                            <span>373</span>
+                        </a>
+                    </div>
+
+                </div>
+            </ul>
+        </div>
+        <span class="separator">1</span>
+        <div class="article"></div>
+        <span class="separator">1</span>
+        <div class="article"></div>
+    </div>
     <div class="search-box"></div>
     <div class="daily-sentence">
         <div class="tit">每日一语</div>

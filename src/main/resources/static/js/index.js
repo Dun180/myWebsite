@@ -11,8 +11,7 @@ window.onload=function (){
     var allA=document.getElementsByName("page-jump");
     var btnPrev=document.getElementsByClassName("btn prev");
     var btnNext=document.getElementsByClassName("btn next")
-    console.log(btnPrev[0]);
-    console.log(btnNext[0]);
+
     var index=0;
     allA[index].style.backgroundColor="rgba(255,255,255,0.4)";
     for(var i=0;i<allA.length;i++){
@@ -35,14 +34,12 @@ window.onload=function (){
             imgList.style.left=-1200*(index)+"px";
             index--;
         }
-        console.log(index);
 
         move(imgList,"left",-1200*(index),150,function (){
             setA();
             autoChange();
         });
     }
-    alert("18");
     btnNext[0].onclick=function(){
         clearInterval(timer);
         index++;

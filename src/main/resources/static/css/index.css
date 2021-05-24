@@ -114,11 +114,78 @@
     float: right;
     margin-top: 30px;
 }
-.main-content .technology-sharing {
-    width: 870px;
+.main-content .blogs {
+    width: 850px;
     height: 800px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
     border: 1px solid #e0e0e0;
     border-radius: 5px;
     float: left;
+    padding: 10px;
+}
+.main-content .blogs .tit {
+    font-size: 20px;
+}
+.main-content .blogs .separator {
+    display: block;
+    width: 850px;
+    height: 0px;
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+    margin: 10px 0;
+}
+.main-content .blogs .article {
+    width: 850px;
+    height: 200px;
+}
+.main-content .blogs .article figure {
+    background-color: blue;
+    width: 200px;
+    height: 160px;
+    overflow: hidden;
+    float: left;
+    margin: 20px 20px 20px 10px;
+}
+.main-content .blogs .article figure {
+    border-radius: 5px;
+}
+.main-content .blogs .article ul {
+    margin: 20px 0;
+    float: left;
+    line-height: 22px;
+    color: #777;
+    width: 570px;
+}
+.main-content .blogs .article ul h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.main-content .blogs .article ul p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+.main-content .blogs .article ul .message {
+    margin-top: 16px;
+    width: 570px;
+    height: 30px;
+}
+.main-content .blogs .article ul .message .message-left {
+    float: left;
+}
+.main-content .blogs .article ul .message i {
+    font-size: 16px;
+    line-height: 30px;
+}
+.main-content .blogs .article ul .message .author {
+    font-size: 14px;
+    line-height: 30px;
+    margin-right: 5px;
+}
+.main-content .blogs .article ul .message span {
+    font-size: 14px;
+    line-height: 30px;
+}
+.main-content .blogs .article ul .message .message-right .msg {
+    float: right;
+    margin-right: 5px;
 }
