@@ -5,22 +5,19 @@ body {
     margin: 0;
     padding: 0;
 }
-.nav-header .head-contain {
+.nav-header .container {
     /*设置容器宽度*/
     width: 1200px;
     margin-left: auto;
     margin-right: auto;
 }
 
+
 /*顶部样式*/
 .nav-header {
     height: 60px;
     width: 100%;
     background: rgba(0, 0, 0, .6);
-}
-.head-contain {
-    margin: 0 auto;
-    height: 60px;
 }
 .top-nav, .top-nav li, .top-right {
     display: inline-block;
@@ -77,3 +74,19 @@ body {
     color: #39db5e;
 }
 
+
+/*尾部样式*/
+.footer {
+    height: 60px;
+    width: 100%;
+    background: rgba(0, 0, 0, .6);
+    margin-top: 40px;
+    /*position: relative;*/
+    /*bottom: -400px;*/
+}
+.footer .content{
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    padding-top: 20px;
+}

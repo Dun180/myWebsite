@@ -1,0 +1,51 @@
+/*公共样式*/
+.container {
+    margin-top: 30px;
+    /*设置容器宽度*/
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1000;
+}
+.container:after{
+    content:'';
+    display:block;
+    clear:both;
+}
+.image {
+    float: left;
+
+}
+.image img {
+    height: 400px;
+    z-index: 100;
+}
+.sakura {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -2;
+}
+.tit {
+    height: 300px;
+    width: 100%;
+    float: left;
+    text-align: center;
+
+}
+.tit h3 {
+    margin-top: 133px;
+    font-size: 100px;
+}
+#img6{
+    width: 375px;
+}
+#img9{
+    width: 350px;
+}
+#img13{
+    width: 250px;
+}
+#img8{
+    margin-left: 300px;
+}

@@ -52,7 +52,7 @@ public class LoginController {
     }
 
     //注册请求
-    @RequestMapping(value = "/user/register",method = RequestMethod.POST)
+    @RequestMapping(value = "/user/register")
     public String register(@RequestParam("username") String username,
                            @RequestParam("password") String password){
         if(!StringUtils.isEmpty(username)&&!StringUtils.isEmpty(password)){
