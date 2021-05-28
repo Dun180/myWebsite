@@ -27,6 +27,8 @@ public class User {
     @Version
     private Integer version;
 
+    private Integer administrator; //管理员权限
+
     public Integer getVersion() {
         return version;
     }
@@ -77,32 +79,6 @@ public class User {
         this.email = email;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", createTime=" + createTime +
-                ", updateTime=" + updateTime +
-                ", deleted=" + deleted +
-                ", version=" + version +
-                '}';
-    }
-
-    public User(Integer id, String name, String email, String username, String password, Date createTime, Date updateTime, Integer deleted, Integer version) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.username = username;
-        this.password = password;
-        this.createTime = createTime;
-        this.updateTime = updateTime;
-        this.deleted = deleted;
-        this.version = version;
-    }
 
     public String getUsername() {
         return username;
@@ -129,5 +105,42 @@ public class User {
     }
 
     public User() {
+    }
+
+    public Integer getAdministrator() {
+        return administrator;
+    }
+
+    public void setAdministrator(Integer administrator) {
+        this.administrator = administrator;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                ", deleted=" + deleted +
+                ", version=" + version +
+                ", administrator=" + administrator +
+                '}';
+    }
+
+    public User(Integer id, String name, String email, String username, String password, Date createTime, Date updateTime, Integer deleted, Integer version, Integer administrator) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
+        this.deleted = deleted;
+        this.version = version;
+        this.administrator = administrator;
     }
 }

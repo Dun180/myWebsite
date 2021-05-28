@@ -1,10 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Template</title>
+    <link rel="stylesheet" th:href="@{css/reset.css}">
+    <link rel="stylesheet" th:href="@{/css/head.css}">
+    <link rel="stylesheet" th:href="@{/css/template.css}">
 </head>
 <body>
+<!--头部 S-->
+<div th:replace="~{commons/commons::topbar}"></div>
+<!--头部 E-->
+<!--主体 S-->
 
+<div class="article">
+        <div class="art-tit">
+            <div class="container">
+                <div class="tit"><h3>每日一句话经典语录，句句精辟走心</h3></div>
+                <div class="author">
+                    <div class="author-avatar"><a href=""><img th:src="@{img/default-avatar.png}" alt=""></a></div>
+                    <div class="author-name">
+                        <a href=""><p>作者</p></a>
+                        <div class="author-msg">
+                            <span>发布时间：18-04-29</span>
+                            <span class="time">08：52</span>
+                            <span class="line">|</span>
+                            <span>网站营运经理，情感领域爱好者</span>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+            <div class="art-content container">
+                <div class="content-left">
+                    <div class="text"></div>
+                    <div class="comment-module"></div>
+                </div>
+                <div class="content-right"></div>
+            </div>
+
+
+</div>
+<!--主体 E-->
+<!--尾部 S-->
+<div th:replace="~{commons/commons::footer}"></div>
+<!--尾部 E-->
 </body>
 </html>

@@ -53,6 +53,7 @@
       <th>密码</th>
       <th>创建时间</th>
       <th>更新时间</th>
+      <th>用户权限</th>
     </tr>
     </thead>
     <tbody>
@@ -67,6 +68,7 @@
       <td th:text="${user.getPassword()}"></td>
       <td th:text="${#dates.format(user.getCreateTime(),'yyyy-MM-dd HH:mm:ss')}"></td>
       <td th:text="${#dates.format(user.getUpdateTime(),'yyyy-MM-dd HH:mm:ss')}"></td>
+      <td th:text="${user.getAdministrator()}"></td>
 
       <td class="td-manage">
 
